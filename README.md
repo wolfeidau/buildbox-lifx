@@ -1,6 +1,6 @@
 # buildbox-lifx
 
-This is a small service to monitor buildbox builds and change the lifx when something fails.
+This is a small service to monitor [buildbox](http://buildbox.io) builds and change the [lifx](http://lifx.co) when something fails.
 
 # Bulding
 
