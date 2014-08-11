@@ -1,6 +1,6 @@
 # buildbox-lifx
 
-This is a small service to monitor [buildbox](http://buildbox.io) builds and change the [lifx](http://lifx.co) when something fails.
+This is a small service to monitor [buildbox](http://buildbox.io) builds and change the color of a [lifx](http://lifx.co) globe. Currently starts green and changes to red if one or more build fail.
 
 # Bulding
 
