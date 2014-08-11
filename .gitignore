@@ -1,0 +1,3 @@
+bin/buildbox-lifx
+.gopath/*
+pkg/
