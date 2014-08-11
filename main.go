@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"os/signal"
 	"time"
 
 	"github.com/codegangsta/cli"
@@ -137,14 +136,7 @@ func realMain() int {
 	}
 
 	// go forth and poll
-	go app.Run(os.Args)
-
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt, os.Kill)
-
-	// Block until a signal is received.
-	s := <-c
-	fmt.Println("Got signal:", s)
+	app.Run(os.Args)
 
 	return 0
 }
