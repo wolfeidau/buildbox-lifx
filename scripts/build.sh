@@ -27,6 +27,9 @@ export GOPATH="$(pwd)/.gopath"
 cd .gopath/src/github.com/${OWNER}/${PROJECT_NAME}
 
 go get -d -v ./...
-
-go build -ldflags "-X main.GitCommit ${GIT_COMMIT}${GIT_DIRTY}" -o ./bin/${BIN_NAME}
+if [ "$GOOS" == "windows" ]; then
+	go build -ldflags "-X main.GitCommit ${GIT_COMMIT}${GIT_DIRTY}" -o ./bin/${BIN_NAME}.exe
+else
+	go build -ldflags "-X main.GitCommit ${GIT_COMMIT}${GIT_DIRTY}" -o ./bin/${BIN_NAME}
+fi
 

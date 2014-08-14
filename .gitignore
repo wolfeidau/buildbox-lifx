@@ -1,3 +1,4 @@
 bin/buildbox-lifx
+bin/buildbox-lifx.exe
 .gopath/*
 pkg/

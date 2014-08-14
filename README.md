@@ -4,7 +4,7 @@ This is a small service to monitor [buildbox](http://buildbox.io) builds and cha
 
 # Bulding
 
-The following command will compile an executable and put it in `bin/buildbox-lifx`.
+The following command will compile an executable and put it in `bin/buildbox-lifx` (GOOS=windows will build add .exe).
 
 ```
 make
@@ -20,6 +20,12 @@ Or for the raspberry pi.
 
 ```
 GOARM=5 GOARCH=arm GOOS=linux make
+```
+
+Or for those who want to use it build it for windows (note requires linux/osx to build atm).
+
+```
+GOARCH=amd64 GOOS=windows make
 ```
 
 
