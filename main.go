@@ -50,6 +50,11 @@ func realMain() int {
 			Usage: "buildbox api key",
 		},
 		cli.StringFlag{
+			Name:  "slug",
+			Value: "",
+			Usage: "buildbox organization slug",
+		},
+		cli.StringFlag{
 			Name:  "branch",
 			Value: "master",
 			Usage: "branch to filter builds",
@@ -83,7 +88,7 @@ func realMain() int {
 		client.StartDiscovery()
 
 		for {
-			url := fmt.Sprintf("https://cc.buildbox.io/ninja-blocks-inc.xml?api_key=%s&branch=%s", c.String("apikey"), c.String("branch"))
+			url := fmt.Sprintf("https://cc.buildbox.io/%s.xml?api_key=%s&branch=%s", c.String("slug"), c.String("apikey"), c.String("branch"))
 
 			resp, err := http.Get(url)
 
