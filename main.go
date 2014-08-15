@@ -133,6 +133,8 @@ func realMain() int {
 					}
 				}
 
+			} else {
+				log.Errorf("Unexpected status code %d from buildbox", resp.StatusCode)
 			}
 
 			time.Sleep(30 * time.Second)
